@@ -1,0 +1,40 @@
+{
+  "name": "kuc-text",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start",
+    "start": "web-dev-server --node-resolve --open",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lit-element": "^3.0.0",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@open-wc/testing": "^3.0.0-next.3",
+    "@open-wc/testing-karma": "^4.0.9",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/web-components": "^6.3.8",
+    "@web/dev-server": "^0.1.23",
+    "@webcomponents/webcomponentsjs": "^2.6.0",
+    "babel-loader": "^8.2.2",
+    "chai": "^4.3.4",
+    "deepmerge": "^4.2.2",
+    "karma": "^6.3.4",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-firefox-launcher": "^2.1.1",
+    "karma-mocha": "^2.0.1",
+    "mocha": "^9.1.1",
+    "nyc": "^15.1.0",
+    "tslib": "^2.3.1"
+  }
+}
