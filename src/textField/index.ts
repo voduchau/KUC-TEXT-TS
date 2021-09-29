@@ -26,8 +26,9 @@ export class KucTextField extends LitElement {
   override render() {
     return html`
     <div class="kuc-text-group${this.required ? " kuc-text-group_required" : null}${ this.className}">
-        <label for="kuc-${this.label}">${this.label}</label>
+        <label for="kuc-${this.label}" class="kuc-label">${this.label}</label>
         <input 
+            class="kuc-input"
             name="kuc-${this.label}"
             placeholder="${this.placeholder}"
             @change="${this.changeHandler}"
@@ -51,7 +52,7 @@ export class KucTextField extends LitElement {
         content: "*";
         color: #ff0000
     }
-    label {
+    .kuc-label {
       margin-right: 5px;
       position: relative;
       display: inline-flex;
@@ -60,7 +61,7 @@ export class KucTextField extends LitElement {
       height: 32px;
       font-size: 15px;
     }
-    input {
+    .kuc-input {
         flex: 1;
         box-sizing: border-box;
         margin: 0;
@@ -75,7 +76,7 @@ export class KucTextField extends LitElement {
         background-image: none;
         border: 1px solid #d9d9d9;
         border-radius: 2px;
-        transition: all .3s;
+        transition: all 0.3s;
     }
     ::placeholder {
       color: #b0aeae;
