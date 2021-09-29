@@ -48,7 +48,7 @@ export class KucTextField extends LitElement {
     .kuc-text-group {
         display: flex;
     }
-    .kuc-text-group_required label:after {
+    .kuc-text-group_required .kuc-label:after {
         content: "*";
         color: #ff0000
     }
@@ -78,7 +78,7 @@ export class KucTextField extends LitElement {
         border-radius: 2px;
         transition: all 0.3s;
     }
-    ::placeholder {
+    .kuc-input::placeholder {
       color: #b0aeae;
     }
   `;
