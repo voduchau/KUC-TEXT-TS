@@ -44,20 +44,41 @@ export class KucTextField extends LitElement {
   }
 
   static override styles = css`
-    :host {
-        witdh: 100%;
-    }
     .kuc-text-group {
         display: flex;
     }
     .kuc-text-group_required label:after {
         content: "*";
-        color: red
+        color: #ff0000
     }
     label {
+      margin-right: 5px;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      max-width: 100%;
+      height: 32px;
+      font-size: 15px;
     }
     input {
-        flex: 1
+        flex: 1;
+        box-sizing: border-box;
+        margin: 0;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        min-width: 0;
+        padding: 4px 11px;
+        font-size: 14px;
+        line-height: 1.5715;
+        background-color: #ffffff;
+        background-image: none;
+        border: 1px solid #d9d9d9;
+        border-radius: 2px;
+        transition: all .3s;
+    }
+    ::placeholder {
+      color: #b0aeae;
     }
   `;
 }
