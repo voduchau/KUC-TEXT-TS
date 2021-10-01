@@ -6,9 +6,13 @@ export class KucTextField extends LitElement {
 
   @property({ type: String }) className = "";
 
+  @property({ type: String}) error = "";
+
   @property({ type: String }) id = "";
 
   @property({ type: String }) label = "";
+
+  @property({ type: String }) value = "";
 
   @property({ type: String }) placeholder = "";
 
@@ -26,14 +30,18 @@ export class KucTextField extends LitElement {
   override render() {
     return html`
     <div class="kuc-text-group${this.required ? " kuc-text-group_required" : null}${ this.className}">
-        <label for="kuc-${this.label}" class="kuc-label">${this.label}</label>
-        <input 
-            class="kuc-input"
-            name="kuc-${this.label}"
-            placeholder="${this.placeholder}"
-            @change="${this.changeHandler}"
-            ?disabled="${this.disabled}"
-        />
+          <label for="kuc-${this.label}" class="kuc-label">${this.label}</label>
+          <div class="group-input">
+            <input 
+              class="kuc-input"
+              name="kuc-${this.label}"
+              placeholder="${this.placeholder}"
+              value="${this.value}"
+              @change="${this.changeHandler}"
+              ?disabled="${this.disabled}"
+            />
+            <div class="kuc-error-text">${this.error}</div>
+          </div>
     </div>
     `;
   }
@@ -45,12 +53,15 @@ export class KucTextField extends LitElement {
   }
 
   static override styles = css`
-    .kuc-text-group {
-        display: flex;
+    .kuc-text-group  {
+      display: flex;
     }
     .kuc-text-group_required .kuc-label:after {
-        content: "*";
-        color: #ff0000
+      content: "*";
+      color: #ff0000
+    }
+    .group-input {
+      flex: 1
     }
     .kuc-label {
       margin-right: 5px;
@@ -62,21 +73,25 @@ export class KucTextField extends LitElement {
       font-size: 15px;
     }
     .kuc-input {
-        flex: 1;
-        box-sizing: border-box;
-        margin: 0;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        min-width: 0;
-        padding: 4px 11px;
-        font-size: 14px;
-        line-height: 1.5715;
-        background-color: #ffffff;
-        background-image: none;
-        border: 1px solid #d9d9d9;
-        border-radius: 2px;
-        transition: all 0.3s;
+      flex: 1;
+      box-sizing: border-box;
+      margin: 0;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      min-width: 0;
+      padding: 4px 11px;
+      font-size: 14px;
+      line-height: 1.5715;
+      background-color: #ffffff;
+      background-image: none;
+      border: 1px solid #d9d9d9;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .kuc-error-text {
+      color: #ff0000;
+      margin-top: 6px;
     }
     .kuc-input::placeholder {
       color: #b0aeae;
