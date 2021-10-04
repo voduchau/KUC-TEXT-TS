@@ -91,7 +91,7 @@ export class KucTextField extends LitElement {
       color: #ff0000;
       padding: 5px 0;
     }
-    .kuc-input::placeholder {
+    .kuc-text-group-input_item::placeholder {
       color: #b0aeae;
     }
   `;
