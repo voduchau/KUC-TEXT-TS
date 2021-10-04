@@ -71,6 +71,9 @@ export class KucTextField extends LitElement {
       max-width: 100%;
       height: 32px;
       font-size: 15px;
+      verflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
     }
     .kuc-input {
       flex: 1;
