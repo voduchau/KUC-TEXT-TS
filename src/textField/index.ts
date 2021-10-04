@@ -33,7 +33,7 @@ export class KucTextField extends LitElement {
           <label for="kuc-${this.label}" class="kuc-label">${this.label}</label>
           <div class="group-input">
             <input 
-              class="kuc-input"
+              class="kuc-input${this.error ? " kuc-input-error" : null }"
               name="kuc-${this.label}"
               placeholder="${this.placeholder}"
               value="${this.value}"
@@ -61,7 +61,7 @@ export class KucTextField extends LitElement {
       color: #ff0000
     }
     .group-input {
-      flex: 1
+      flex: 1;
     }
     .kuc-label {
       margin-right: 5px;
@@ -89,9 +89,12 @@ export class KucTextField extends LitElement {
       border-radius: 2px;
       transition: all 0.3s;
     }
+    .kuc-input-error {
+      border-color: #FF0000;
+    }
     .kuc-error-text {
       color: #ff0000;
-      margin-top: 6px;
+      margin-top: 5px;
     }
     .kuc-input::placeholder {
       color: #b0aeae;
